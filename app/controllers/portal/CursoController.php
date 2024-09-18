@@ -8,7 +8,9 @@ class CursoController{
 	}
 
 	public function show($request){
-		dd($request->next);
+		$this->view([
+			'curso' => 'Curso PHP MVC',
+		], 'portal.cursos');
 	}
 
 	public function create(){

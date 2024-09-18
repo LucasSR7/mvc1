@@ -21,4 +21,3 @@ try {
 } catch (\Exception $e) {
 	dd($e->getMessage());
 }
-
