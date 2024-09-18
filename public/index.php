@@ -5,11 +5,6 @@ require "../bootstrap.php";
 use core\Controller;
 use core\Method;
 use core\Parameters;
-use app\classes\User;
-
-$user = new User("John Doe");
-
-echo $user;
 
 try {
 	$controller  = new Controller();
