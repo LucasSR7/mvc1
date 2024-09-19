@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-abstract class ContainerController{
+use app\traits\View;
 
+abstract class ContainerController {
 	use View;
-
 }

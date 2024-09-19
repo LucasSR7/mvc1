@@ -6,6 +6,7 @@ use core\Controller;
 use core\Method;
 use core\Parameters;
 
+
 try {
 	$controller  = new Controller();
 	$controller = $controller->load();

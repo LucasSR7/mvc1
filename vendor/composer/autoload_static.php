@@ -266,6 +266,19 @@ class ComposerStaticInit5282744fe59ef9fb8085344aaecad767
         'Twig\\Util\\DeprecationCollector' => __DIR__ . '/..' . '/twig/twig/src/Util/DeprecationCollector.php',
         'Twig\\Util\\ReflectionCallable' => __DIR__ . '/..' . '/twig/twig/src/Util/ReflectionCallable.php',
         'Twig\\Util\\TemplateDirIterator' => __DIR__ . '/..' . '/twig/twig/src/Util/TemplateDirIterator.php',
+        'app\\classes\\Uri' => __DIR__ . '/../..' . '/app/classes/Uri.php',
+        'app\\controllers\\ContainerController' => __DIR__ . '/../..' . '/app/controllers/ContainerController.php',
+        'app\\controllers\\admin\\ContatoController' => __DIR__ . '/../..' . '/app/controllers/admin/ContatoController.php',
+        'app\\controllers\\portal\\CursoController' => __DIR__ . '/../..' . '/app/controllers/portal/CursoController.php',
+        'app\\controllers\\portal\\ProdutoController' => __DIR__ . '/../..' . '/app/controllers/portal/ProdutoController.php',
+        'app\\exceptions\\ControllerNotExistException' => __DIR__ . '/../..' . '/app/exceptions/ControllerNotExistException.php',
+        'app\\exceptions\\MethodNotExistException' => __DIR__ . '/../..' . '/app/exceptions/MethodNotExistException.php',
+        'app\\traits\\Logger' => __DIR__ . '/../..' . '/app/traits/Logger.php',
+        'app\\traits\\View' => __DIR__ . '/../..' . '/app/traits/View.php',
+        'core\\Controller' => __DIR__ . '/../..' . '/core/Controller.php',
+        'core\\Method' => __DIR__ . '/../..' . '/core/Method.php',
+        'core\\Parameters' => __DIR__ . '/../..' . '/core/Parameters.php',
+        'core\\Twig' => __DIR__ . '/../..' . '/core/Twig.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

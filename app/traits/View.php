@@ -2,19 +2,21 @@
 
 namespace app\traits;
 
+use core\Twig;
 
-Trait View {
+trait View {
 
-	private function twig(){
+    private function twig() {
+        $twig = new Twig;
 
-		$twig = new Twig();
+        $loadTwig = $twig->loadTwig();
 
-		return $twig->loadTwig();
+        return $loadTwig;
+    }
 
-	}
+    public function view($data, $view) {
+        $template = $this->twig()->load(str_replace('.', '/', $view) . '.html');
 
-	public function view($data, $view){
-		$template = $this->twig()->load(str_replace('.','/', $view. '.html'));
-		return $template->display($data);
-	}
+        return $template->display($data);
+    }
 }

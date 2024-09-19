@@ -1,0 +1,47 @@
+[33mcommit b80d789b3bd88af49705f2ac61f0c7c975ac9485[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Lucas Reis da Silva <lrsilva@dga.unicamp.br>
+Date:   Wed Sep 18 14:54:11 2024 -0300
+
+    inclusao das views com twig, primeira parte
+
+[33mcommit 39cc3c902a9f8ef9ad88a636279ba08ad1b35747[m
+Author: Lucas Reis da Silva <lrsilva@dga.unicamp.br>
+Date:   Wed Sep 18 09:48:04 2024 -0300
+
+    retirado pasta imagens
+
+[33mcommit 903286f8e547a7c9facf75504f0a30846e4004a8[m
+Author: Lucas Reis da Silva <lrsilva@dga.unicamp.br>
+Date:   Wed Sep 18 09:39:56 2024 -0300
+
+    retirado index.html e style.css
+
+[33mcommit f2a1098a0c91d802766c49bdb773721abc4fff35[m
+Author: Lucas Reis da Silva <lrsilva@dga.unicamp.br>
+Date:   Wed Sep 18 09:37:23 2024 -0300
+
+    retirando pasta node_modules
+
+[33mcommit 0868a6012dff66adcf596f2f40676d4d095c164d[m
+Author: Lucas Reis da Silva <lrsilva@dga.unicamp.br>
+Date:   Wed Sep 18 09:31:28 2024 -0300
+
+    Fim Controllers
+
+[33mcommit 24c5d6d391688c23e920c0b690a382c86cdb4504[m
+Author: Lucas Reis <luccas_reiis@hotmail.com>
+Date:   Mon Apr 8 22:25:20 2024 -0300
+
+    Adicionado pasta de imagens do site
+
+[33mcommit e54a246f9dfae0f1aadab2470737a87b03451b45[m
+Author: Lucas Reis <luccas_reiis@hotmail.com>
+Date:   Mon Apr 8 22:16:37 2024 -0300
+
+    Adicionado folha de estilo completa
+
+[33mcommit 458e5634a0b507c2062c969ebeaca1396bba8910[m
+Author: Lucas Reis <luccas_reiis@hotmail.com>
+Date:   Mon Apr 8 22:15:24 2024 -0300
+
+    Adicionado pagina completa HTML
