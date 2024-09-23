@@ -23,15 +23,13 @@ use Twig\Node\Node;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
- *
- * @internal
  */
 final class MacroAutoImportNodeVisitor implements NodeVisitorInterface
 {
     private $inAModule = false;
     private $hasMacroCalls = false;
 
-    public function enterNode(Node $node, Environment $env): Node
+    public function enterNode(Node $node, Environment $env)
     {
         if ($node instanceof ModuleNode) {
             $this->inAModule = true;
@@ -41,19 +39,19 @@ final class MacroAutoImportNodeVisitor implements NodeVisitorInterface
         return $node;
     }
 
-    public function leaveNode(Node $node, Environment $env): Node
+    public function leaveNode(Node $node, Environment $env)
     {
         if ($node instanceof ModuleNode) {
             $this->inAModule = false;
             if ($this->hasMacroCalls) {
-                $node->getNode('constructor_end')->setNode('_auto_macro_import', new ImportNode(new NameExpression('_self', 0), new AssignNameExpression('_self', 0), 0, true));
+                $node->getNode('constructor_end')->setNode('_auto_macro_import', new ImportNode(new NameExpression('_self', 0), new AssignNameExpression('_self', 0), 0, 'import', true));
             }
         } elseif ($this->inAModule) {
             if (
-                $node instanceof GetAttrExpression
-                && $node->getNode('node') instanceof NameExpression
-                && '_self' === $node->getNode('node')->getAttribute('name')
-                && $node->getNode('attribute') instanceof ConstantExpression
+                $node instanceof GetAttrExpression &&
+                $node->getNode('node') instanceof NameExpression &&
+                '_self' === $node->getNode('node')->getAttribute('name') &&
+                $node->getNode('attribute') instanceof ConstantExpression
             ) {
                 $this->hasMacroCalls = true;
 
@@ -66,7 +64,7 @@ final class MacroAutoImportNodeVisitor implements NodeVisitorInterface
         return $node;
     }
 
-    public function getPriority(): int
+    public function getPriority()
     {
         // we must be ran before auto-escaping
         return -10;

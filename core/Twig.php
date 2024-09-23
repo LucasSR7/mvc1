@@ -20,4 +20,8 @@ class Twig {
 	private function loadViews() {
 		return new \Twig\Loader\FilesystemLoader('../app/views');
 	}
+
+	public function loadExtensions(){
+		return $this->twig->addExtension(new \Twig\Extensions\TextExtension());
+	}
 }

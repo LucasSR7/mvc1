@@ -11,6 +11,8 @@ trait View {
 
         $loadTwig = $twig->loadTwig();
 
+        $twig->loadExtensions();
+
         return $loadTwig;
     }
 

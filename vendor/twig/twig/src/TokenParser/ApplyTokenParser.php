@@ -23,12 +23,10 @@ use Twig\Token;
  *   {% apply upper %}
  *      This text becomes uppercase
  *   {% endapply %}
- *
- * @internal
  */
 final class ApplyTokenParser extends AbstractTokenParser
 {
-    public function parse(Token $token): Node
+    public function parse(Token $token)
     {
         $lineno = $token->getLine();
         $name = $this->parser->getVarName();
@@ -36,24 +34,24 @@ final class ApplyTokenParser extends AbstractTokenParser
         $ref = new TempNameExpression($name, $lineno);
         $ref->setAttribute('always_defined', true);
 
-        $filter = $this->parser->getExpressionParser()->parseFilterExpressionRaw($ref);
+        $filter = $this->parser->getExpressionParser()->parseFilterExpressionRaw($ref, $this->getTag());
 
         $this->parser->getStream()->expect(Token::BLOCK_END_TYPE);
         $body = $this->parser->subparse([$this, 'decideApplyEnd'], true);
         $this->parser->getStream()->expect(Token::BLOCK_END_TYPE);
 
         return new Node([
-            new SetNode(true, $ref, $body, $lineno),
-            new PrintNode($filter, $lineno),
-        ], [], $lineno);
+            new SetNode(true, $ref, $body, $lineno, $this->getTag()),
+            new PrintNode($filter, $lineno, $this->getTag()),
+        ]);
     }
 
-    public function decideApplyEnd(Token $token): bool
+    public function decideApplyEnd(Token $token)
     {
         return $token->test('endapply');
     }
 
-    public function getTag(): string
+    public function getTag()
     {
         return 'apply';
     }

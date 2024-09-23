@@ -13,7 +13,6 @@ class TypeRequests{
 
 	}
 
-
 	public function verifyRequestMethod(){
 
 		if($this->request == 'POST'){
