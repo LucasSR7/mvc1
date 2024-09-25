@@ -13,6 +13,8 @@ trait View {
 
         $twig->loadExtensions();
 
+        $twig->loadFunctions();
+
         return $loadTwig;
     }
 
